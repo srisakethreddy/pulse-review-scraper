@@ -1,129 +1,61 @@
-# pulse-review-scraper
-Pulse Assignment 4 – SaaS Review Scraper
-Overview
+# Pulse Assignment 4 – SaaS Review Scraper
 
-This project is a Python-based web scraping script developed as part of Pulse Assignment 4.
-The objective of this assignment is to collect SaaS product reviews from an online platform and store them in a structured JSON format.
+## Purpose
+This project collects reviews of SaaS products from online platforms and saves them in JSON format.  
+It demonstrates web scraping techniques, structured data handling, and robust error management using Python.
 
-In this implementation, reviews are scraped from Capterra for a SaaS product (Slack) using Python libraries.
+## Chosen Platform
+- **Capterra**
 
-Purpose
+Capterra was chosen because it offers publicly accessible reviews for SaaS products and a consistent page structure, making it suitable for scraping exercises.
 
-The purpose of this project is to demonstrate:
 
-Web scraping using Python
+## Technologies Used
+- Python 3
+- Requests library
+- BeautifulSoup (bs4) for HTML parsing
 
-Extracting structured review data from HTML pages
-
-Handling request failures gracefully
-
-Saving scraped data in JSON format
-
-The script focuses on simplicity while meeting all the assignment requirements.
-
-Data Source
-Capterra
-
-Capterra is used as the review source because it provides publicly available SaaS product reviews with clear HTML structure.
-The platform contains review titles and descriptions that can be easily extracted using HTML parsing techniques.
-
-Features Implemented
-
-Sends HTTP requests with custom headers to avoid blocking
-
-Scrapes review titles and review descriptions
-
-Extracts data only when valid review elements are found
-
-Implements basic error handling using try–except
-
-Uses fallback sample data if scraping fails
-
-Stores output in a clean JSON format
-
-Technologies Used
-
-Python 3 – Core programming language
-
-Requests – For making HTTP requests
-
-BeautifulSoup (bs4) – For parsing HTML content
-
-JSON module – For storing output data
-
-Code Explanation (High Level)
-
-Sends a GET request to the Capterra review page using a custom User-Agent.
-
-Parses the HTML content using BeautifulSoup.
-
-Locates review blocks using <article> tags.
-
-Extracts:
-
-Review title (<h3>)
-
-Review content (<p>)
-
-Stores extracted reviews in a Python list.
-
-If scraping fails or the site blocks the request, fallback review data is used.
-
-Saves the final output into output.json.
-
-Project Structure
+## Project Files
 pulse-review-scraper/
-scraper.py        
-output.json       
-requirements.txt 
-README.md       
+│
+├── scraper.py # Main script to fetch and save reviews
+├── requirements.txt # Python dependencies
+├── README.md # This documentation
+└── output.json # Scraped reviews saved in JSON
 
-How to Run the Project
-Step 1: Install dependencies
-pip install requests beautifulsoup4
 
-Step 2: Run the script
+
+## Setup Instructions
+
+1. Create virtual environment
+```bash
+python -m venv venv
+venv\Scripts\activate
+
+2. Install dependencies
+pip install -r requirements.txt
+
+Running the Scraper
+
+Run the Python script:
+
 python scraper.py
 
-Output Format
 
-The script generates an output.json file containing an array of reviews.
-
-Each review includes:
-
-title – Review title
-
-review – Review description
-
-source – Review platform (Capterra)
+The program will generate output.json containing the reviews.
 
 Sample Output
 [
-{
-  "title": "Excellent collaboration tool",
+  {
+    "title": "Excellent collaboration tool",
     "review": "Slack improves team communication and productivity.",
     "source": "Capterra"
-}
+  }
 ]
 
-Error Handling
+Handling Access Restrictions (HTTP 403)
 
-Handles request failures using try–except blocks
+Sometimes websites block automated requests (HTTP 403).
+This scraper includes a fallback mechanism that provides sample review data when live scraping is blocked.
+This ensures the script always produces valid JSON and demonstrates graceful error handling.
 
-Detects non-200 HTTP responses
-
-Provides fallback sample review data if scraping fails
-
-Prevents program crashes due to missing HTML elements
-
-Notes
-
-This project is created strictly for educational purposes.
-
-The implementation is original and completed individually.
-
-The script demonstrates a simple and effective approach to web scraping without unnecessary complexity.
-
-Conclusion
-
-This project successfully fulfills the requirements of Pulse Assignment 4 by scraping SaaS reviews, handling errors gracefully, and generating structured JSON output using Python.
