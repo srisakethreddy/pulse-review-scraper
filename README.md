@@ -73,11 +73,10 @@ Saves the final output into output.json.
 
 Project Structure
 pulse-review-scraper/
-│
-├── scraper.py        # Python script for scraping reviews
-├── output.json       # Generated JSON file with reviews
-├── requirements.txt # Dependency list
-└── README.md        # Project documentation
+scraper.py        # Python script for scraping reviews
+output.json       # Generated JSON file with reviews
+requirements.txt # Dependency list
+README.md        # Project documentation
 
 How to Run the Project
 Step 1: Install dependencies
