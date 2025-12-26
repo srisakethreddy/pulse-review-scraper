@@ -73,10 +73,10 @@ Saves the final output into output.json.
 
 Project Structure
 pulse-review-scraper/
-scraper.py        # Python script for scraping reviews
-output.json       # Generated JSON file with reviews
-requirements.txt # Dependency list
-README.md        # Project documentation
+scraper.py        
+output.json       
+requirements.txt 
+README.md       
 
 How to Run the Project
 Step 1: Install dependencies
@@ -99,11 +99,11 @@ source – Review platform (Capterra)
 
 Sample Output
 [
-  {
-    "title": "Excellent collaboration tool",
+{
+  "title": "Excellent collaboration tool",
     "review": "Slack improves team communication and productivity.",
     "source": "Capterra"
-  }
+}
 ]
 
 Error Handling
